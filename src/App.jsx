@@ -1,9 +1,9 @@
 import React from "react";
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 import './App.css'
-import Create from './components/create.jsx'
-import Edit from './components/edit.jsx'
-import Home from './components/home.jsx'
+import Create from './components/page/create.jsx'
+import Edit from './components/page/edit.jsx'
+import Home from './components/page/home.jsx'
 
 function App() {
 
