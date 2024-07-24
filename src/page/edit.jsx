@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import array from "../data/string";
-import InputComp from "../input/input";
-import ButtonComp from "../button/Button";
+import array from "../utils/const";
+import InputComp from "../components/input/input";
+import ButtonComp from "../components/button/Button";
 
 
 export default function Edit() {

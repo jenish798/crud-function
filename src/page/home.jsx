@@ -1,6 +1,6 @@
 import {Link, useNavigate } from "react-router-dom"
-import array from '../data/string'
-import ButtonComp from "../button/Button";
+import array from '../utils/const'
+import ButtonComp from "../components/button/Button";
 
 
 

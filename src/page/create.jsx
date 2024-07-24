@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from "react"
 import {Link, useNavigate } from "react-router-dom";
-import array from "../data/string";
+import array from "../utils/const";
 import { v4 as uuid } from 'uuid';
-import ButtonComp from '../button/Button'
-import InputComp from '../input/input';
+import ButtonComp from '../components/button/Button'
+import InputComp from '../components/input/input';
 
 export default function Create(){
 
