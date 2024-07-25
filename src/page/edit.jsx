@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import array from "../utils/const";
-import InputComp from "../components/input/input";
-import ButtonComp from "../components/button/Button";
+import {InputComp,ButtonComp} from "../components/index";
+import strings from "../utils/string";
 
 
 export default function Edit() {
@@ -47,7 +47,7 @@ export default function Edit() {
                 <InputComp type="text" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Age" />
                 <ButtonComp onClick={(e) => handleSubmit(e)} type="submit">update</ButtonComp>
                 <Link to='/'>
-                <ButtonComp>Home</ButtonComp></Link>
+                <ButtonComp>{strings.homeBtn}</ButtonComp></Link>
             </form>
         </>
     )

@@ -3,8 +3,8 @@ import { useState } from "react"
 import {Link, useNavigate } from "react-router-dom";
 import array from "../utils/const";
 import { v4 as uuid } from 'uuid';
-import ButtonComp from '../components/button/Button'
-import InputComp from '../components/input/input';
+import {ButtonComp,InputComp} from '../components/index';
+import strings from '../utils/string';
 
 export default function Create(){
 
@@ -38,11 +38,11 @@ history('/')
 
 
     <ButtonComp onClick = {(e) => handleSubmit(e)} type='submit'>
-        submit
+        {strings.submitBtn}
     </ButtonComp>
 
     <Link to='/'> 
-    <ButtonComp>Home</ButtonComp></Link>
+    <ButtonComp>{strings.homeBtn}</ButtonComp></Link>
    
 </form>
         </div>

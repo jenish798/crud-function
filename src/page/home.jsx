@@ -1,8 +1,7 @@
 import {Link, useNavigate } from "react-router-dom"
 import array from '../utils/const'
-import ButtonComp from "../components/button/Button";
-
-
+import ButtonComp from "../components/index";
+import strings from "../utils/string";
 
 export default function Home(){
 
@@ -30,8 +29,8 @@ export default function Home(){
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Age</th>
+                    <th>{strings.headerName}</th>
+                    <th>{strings.headerAge}</th>
                 </tr>
  </thead>
  <tbody>
@@ -47,12 +46,12 @@ return(
                 item.Name,
                 item.Age
             )}>
-                Update</ButtonComp></Link>
+                {strings.updateBtn}</ButtonComp></Link>
         </td>
 
         <td>
            <ButtonComp onClick={(e)=> deleted(item.id)}>
-            Delete
+            {strings.deleteBtn}
            </ButtonComp>
         </td>
     </tr>
@@ -61,7 +60,7 @@ return(
  </tbody>
             </table>
             <Link to ='./create'>
-            <ButtonComp>Create</ButtonComp>
+            <ButtonComp>{strings.createName}</ButtonComp>
             </Link>
         </div>
     )
