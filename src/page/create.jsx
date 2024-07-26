@@ -1,49 +1,56 @@
-import React, { useState} from 'react';
-import {Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { v4 as uuid } from "uuid";
+import { ButtonComp, InputComp } from "../components";
 import array from "../utils/const";
-import { v4 as uuid } from 'uuid';
-import {ButtonComp, InputComp} from '../components';
-import strings from '../utils/string';
+import strings from "../utils/string";
 
-export default function Create(){
+export default function Create() {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
 
-    const [name,setName] = useState('');
-    const [age,setAge] = useState('');
+  let history = useNavigate();
 
-    let history = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const handleSubmit = (e) =>{
-e.preventDefault();
+    const ids = uuid();
+    let uni = ids.slice(0, 8);
 
-const ids = uuid();
-console.log(ids)
-let uni = ids.slice(0,8);
-
-let a=name, b= age;
-if(name =='' || age ==''){
-    alert(strings.invalid)
-    return
-}
-array.push({id:uni,Name:a,Age:b})
-
-history('/')
+    let a = name,
+      b = age;
+    if (name == "" || age == "") {
+      alert(strings.invalid);
+      return;
     }
-    return(
-        <div>
-<form>
+    array.push({ id: uni, Name: a, Age: b });
 
-    <InputComp onChange={(e)=>setName(e.target.value)} type="text" placeholder={strings.placeholdername} required />
-    <InputComp onChange={(e)=> setAge(e.target.value)} type="number" required placeholder={strings.placeholderage}/>
+    history("/");
+  };
+  return (
+    <div>
+      <form>
+        <InputComp
+          onChange={(e) => setName(e.target.value)}
+          type="text"
+          placeholder={strings.placeholdername}
+          required
+        />
+        <InputComp
+          onChange={(e) => setAge(e.target.value)}
+          type="number"
+          required
+          placeholder={strings.placeholderage}
+        />
 
+        <ButtonComp onClick={(e) => handleSubmit(e)} type="submit">
+          {strings.submitBtn}
+        </ButtonComp>
 
-    <ButtonComp onClick = {(e) => handleSubmit(e)} type='submit'>
-        {strings.submitBtn}
-    </ButtonComp>
-
-    <Link to='/'> 
-    <ButtonComp>{strings.homeBtn}</ButtonComp></Link>
-   
-</form>
-        </div>
-    )
+        <Link to="/">
+          <ButtonComp>{strings.homeBtn}</ButtonComp>
+        </Link>
+      </form>
+    </div>
+  );
 }
