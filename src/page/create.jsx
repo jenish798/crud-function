@@ -33,14 +33,14 @@ export default function Create() {
         <InputComp
           onChange={(e) => setName(e.target.value)}
           type="text"
-          placeholder={strings.placeholdername}
+          placeholder={strings.placeholderName}
           required
         />
         <InputComp
           onChange={(e) => setAge(e.target.value)}
           type="number"
           required
-          placeholder={strings.placeholderage}
+          placeholder={strings.placeholderAge}
         />
 
         <ButtonComp onClick={(e) => handleSubmit(e)} type="submit">

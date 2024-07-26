@@ -43,13 +43,13 @@ export default function Edit() {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder={strings.placeholdername}
+          placeholder={strings.placeholderName}
         />
         <InputComp
           type="text"
           value={age}
           onChange={(e) => setAge(e.target.value)}
-          placeholder={strings.placeholderage}
+          placeholder={strings.placeholderAge}
         />
         <ButtonComp onClick={(e) => handleSubmit(e)} type="submit">
           {strings.updateBtn}

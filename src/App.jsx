@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
- <h3>{strings.welcome_message}</h3>
+ <h3>{strings.welcome_Message}</h3>
  <Router>
   <Routes>
     <Route path='/' element = {<Home/>}/>

@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
-import array from "../utils/const";
+import array from "../utils/data";
 import ButtonComp from "../components/button/Button";
-import strings from "../utils/string";
+import strings from "../utils/commonString";
 
 export default function Home() {
   let history = useNavigate();
