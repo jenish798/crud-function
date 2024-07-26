@@ -1,6 +1,6 @@
 
 const strings = {
-    welcome_Message: "welcome to Crud Function",
+    welcomeMessage: "welcome to crud function",
     homeBtn:'Home',
     submitBtn:'Submit',
     headerName:'Name',
@@ -8,7 +8,7 @@ const strings = {
     updateBtn:'Update',
     deleteBtn:'Delete',
     createName:'Create',
-    placeholderName:'Enter your Name',
+    placeholderName:'Enter your name',
     placeholderAge:'Enter your age',
     invalid:'Invalid input',
 }
