@@ -1,9 +1,8 @@
-import React from 'react';
-import { useState } from "react"
+import React, { useState} from 'react';
 import {Link, useNavigate } from "react-router-dom";
 import array from "../utils/const";
 import { v4 as uuid } from 'uuid';
-import {ButtonComp,InputComp} from '../components/index';
+import {ButtonComp, InputComp} from '../components';
 import strings from '../utils/string';
 
 export default function Create(){
@@ -22,7 +21,7 @@ let uni = ids.slice(0,8);
 
 let a=name, b= age;
 if(name =='' || age ==''){
-    alert('invalid input')
+    alert(strings.invalid)
     return
 }
 array.push({id:uni,Name:a,Age:b})
@@ -33,8 +32,8 @@ history('/')
         <div>
 <form>
 
-    <InputComp onChange={(e)=>setName(e.target.value)} type="text" placeholder="enter Name" required />
-    <InputComp onChange={(e)=> setAge(e.target.value)} type="number" required placeholder="Age"/>
+    <InputComp onChange={(e)=>setName(e.target.value)} type="text" placeholder={strings.placeholdername} required />
+    <InputComp onChange={(e)=> setAge(e.target.value)} type="number" required placeholder={strings.placeholderage}/>
 
 
     <ButtonComp onClick = {(e) => handleSubmit(e)} type='submit'>

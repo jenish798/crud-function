@@ -1,4 +1,4 @@
-import ButtonComp from './button/Button'
-import InputComp from './input/input'
+import ButtonComp from './button/Button';
+import InputComp from './input/input';
 
-export {ButtonComp,InputComp}
+export {ButtonComp,InputComp};

@@ -8,6 +8,9 @@ const strings = {
     updateBtn:'Update',
     deleteBtn:'Delete',
     createName:'Create',
+    placeholdername:'Enter your Name',
+    placeholderage:'Enter your age',
+    invalid:'Invalid input',
 }
 
 export default strings;

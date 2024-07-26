@@ -1,6 +1,6 @@
 import {Link, useNavigate } from "react-router-dom"
 import array from '../utils/const'
-import ButtonComp from "../components/index";
+import ButtonComp from "../components/button/Button";
 import strings from "../utils/string";
 
 export default function Home(){
