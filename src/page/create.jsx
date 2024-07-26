@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import { ButtonComp, InputComp } from "../components";
-import array from "../utils/const";
-import strings from "../utils/string";
+import array from "../utils/data";
+import strings from "../utils/commonString";
 
-export default function Create() {
+export default function Create({placeholderName,placeholderAge,homeBtn,invalid,submitBtn}) {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
+
 
   let history = useNavigate();
 
@@ -20,7 +21,7 @@ export default function Create() {
     let a = name,
       b = age;
     if (name == "" || age == "") {
-      alert(strings.invalid);
+      alert(invalid);
       return;
     }
     array.push({ id: uni, Name: a, Age: b });
@@ -33,24 +34,32 @@ export default function Create() {
         <InputComp
           onChange={(e) => setName(e.target.value)}
           type="text"
-          placeholder={strings.placeholderName}
+          placeholder={placeholderName}
           required
         />
         <InputComp
           onChange={(e) => setAge(e.target.value)}
           type="number"
           required
-          placeholder={strings.placeholderAge}
+          placeholder={placeholderAge}
         />
 
         <ButtonComp onClick={(e) => handleSubmit(e)} type="submit">
-          {strings.submitBtn}
+          {submitBtn}
         </ButtonComp>
 
         <Link to="/">
-          <ButtonComp>{strings.homeBtn}</ButtonComp>
+          <ButtonComp>{homeBtn}</ButtonComp>
         </Link>
       </form>
     </div>
   );
 }
+
+Create.defaultProps = {
+  placeholderName: strings.placeholderName,
+  placeholderAge: strings.placeholderAge,
+  homeBtn: strings.homeBtn,
+  invalid: strings.invalid,
+  submitBtn: strings.submitBtn,
+};

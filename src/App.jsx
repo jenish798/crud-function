@@ -4,7 +4,7 @@ import './App.css'
 import Create from './page/create.jsx'
 import Edit from './page/edit.jsx'
 import Home from './page/home.jsx'
-import strings from "./utils/string.jsx";
+import strings from "./utils/commonString.jsx";
 
 function App() {
 

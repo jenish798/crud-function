@@ -3,7 +3,7 @@ import array from "../utils/data";
 import ButtonComp from "../components/button/Button";
 import strings from "../utils/commonString";
 
-export default function Home() {
+export default function Home({headerName,headerAge,updateBtn,deleteBtn,createName}) {
   let history = useNavigate();
 
   function setID(id, name, age) {
@@ -64,3 +64,11 @@ export default function Home() {
     </div>
   );
 }
+
+Home.defaultProps = {
+  headerName: strings.headerName,
+  headerAge: strings.headerAge,
+  updateBtn: strings.updateBtn,
+  deleteBtn: strings.deleteBtn,
+  createName:strings.createName,
+};
