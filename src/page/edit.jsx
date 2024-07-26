@@ -4,7 +4,15 @@ import array from "../utils/data";
 import { InputComp, ButtonComp } from "../components";
 import strings from "../utils/commonString";
 
-export default function Edit({invalid,placeholderName,placeholderAge,homeBtn,updateBtn}) {
+export default function Edit() {
+
+  const {
+    invalid,
+    placeholderName,
+    placeholderAge,
+    homeBtn,
+    updateBtn
+  } = strings;
 
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -64,11 +72,3 @@ export default function Edit({invalid,placeholderName,placeholderAge,homeBtn,upd
     </>
   );
 }
-
-Edit.defaultProps = {
-  placeholderName: strings.placeholderName,
-  placeholderAge: strings.placeholderAge,
-  homeBtn: strings.homeBtn,
-  invalid: strings.invalid,
-  updateBtn:strings.updateBtn,
-};

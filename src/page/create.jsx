@@ -5,7 +5,17 @@ import { ButtonComp, InputComp } from "../components";
 import array from "../utils/data";
 import strings from "../utils/commonString";
 
-export default function Create({placeholderName,placeholderAge,homeBtn,invalid,submitBtn}) {
+
+export default function Create() {
+
+  const {
+  placeholderName,
+  placeholderAge,
+  homeBtn,
+  invalid,
+  submitBtn
+} = strings;
+
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
 
@@ -56,10 +66,3 @@ export default function Create({placeholderName,placeholderAge,homeBtn,invalid,s
   );
 }
 
-Create.defaultProps = {
-  placeholderName: strings.placeholderName,
-  placeholderAge: strings.placeholderAge,
-  homeBtn: strings.homeBtn,
-  invalid: strings.invalid,
-  submitBtn: strings.submitBtn,
-};

@@ -3,7 +3,16 @@ import array from "../utils/data";
 import ButtonComp from "../components/button/Button";
 import strings from "../utils/commonString";
 
-export default function Home({headerName,headerAge,updateBtn,deleteBtn,createName}) {
+export default function Home() {
+
+  const {
+    headerName,
+    headerAge,
+    updateBtn,
+    deleteBtn,
+    createName
+  } = strings;
+
   let history = useNavigate();
 
   function setID(id, name, age) {
@@ -28,8 +37,8 @@ export default function Home({headerName,headerAge,updateBtn,deleteBtn,createNam
       <table>
         <thead>
           <tr>
-            <th>{strings.headerName}</th>
-            <th>{strings.headerAge}</th>
+            <th>{headerName}</th>
+            <th>{headerAge}</th>
           </tr>
         </thead>
         <tbody>
@@ -43,14 +52,14 @@ export default function Home({headerName,headerAge,updateBtn,deleteBtn,createNam
                     <ButtonComp
                       onClick={(e) => setID(item.id, item.Name, item.Age)}
                     >
-                      {strings.updateBtn}
+                      {updateBtn}
                     </ButtonComp>
                   </Link>
                 </td>
 
                 <td>
                   <ButtonComp onClick={(e) => deleted(item.id)}>
-                    {strings.deleteBtn}
+                    {deleteBtn}
                   </ButtonComp>
                 </td>
               </tr>
@@ -59,16 +68,9 @@ export default function Home({headerName,headerAge,updateBtn,deleteBtn,createNam
         </tbody>
       </table>
       <Link to="./create">
-        <ButtonComp>{strings.createName}</ButtonComp>
+        <ButtonComp>{createName}</ButtonComp>
       </Link>
     </div>
   );
 }
 
-Home.defaultProps = {
-  headerName: strings.headerName,
-  headerAge: strings.headerAge,
-  updateBtn: strings.updateBtn,
-  deleteBtn: strings.deleteBtn,
-  createName:strings.createName,
-};
