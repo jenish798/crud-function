@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import array from "../utils/data";
-import { InputComp, ButtonComp } from "../components";
 import strings from "../utils/commonString";
+import { handleChange } from "../App";
+import { FormInput } from "../App";
 
 export default function Edit() {
-
-  const {
-    invalid,
-    placeholderName,
-    placeholderAge,
-    homeBtn,
-    updateBtn
-  } = strings;
+  const { invalid, placeholderName, placeholderAge, homeBtn, updateBtn } =
+    strings;
 
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -32,6 +27,8 @@ export default function Edit() {
     })
     .indexOf(id);
 
+  console.log(index);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name == "" || age == "") {
@@ -46,29 +43,20 @@ export default function Edit() {
     history("/");
   };
 
-
   return (
     <>
-      <form>
-        <InputComp
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder={placeholderName}
-        />
-        <InputComp
-          type="text"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-          placeholder={placeholderAge}
-        />
-        <ButtonComp onClick={(e) => handleSubmit(e)} type="submit">
-          {updateBtn}
-        </ButtonComp>
-        <Link to="/">
-          <ButtonComp>{homeBtn}</ButtonComp>
-        </Link>
-      </form>
+      <FormInput
+        name={name}
+        age={age}
+        handleChange={handleChange}
+        setName={setName}
+        setAge={setAge}
+        handleSubmit={handleSubmit}
+        updateBtn={updateBtn}
+        homeBtn={homeBtn}
+        placeholderName={placeholderName}
+        placeholderAge={placeholderAge}
+      />
     </>
   );
 }

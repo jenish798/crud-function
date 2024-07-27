@@ -1,7 +1,7 @@
 import React from 'react';
 import './input.css';
 
-const InputComp = ({onChange,type,placeholder,required}) =>{
+const InputComp = ({type = 'text',onChange,placeholder,required = 'true'}) =>{
     return(
         <input
         className='des-input'

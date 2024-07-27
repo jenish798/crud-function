@@ -1,24 +1,17 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuid } from "uuid";
-import { ButtonComp, InputComp } from "../components";
 import array from "../utils/data";
 import strings from "../utils/commonString";
-
+import { handleChange } from "../App";
+import { FormInput } from "../App";
 
 export default function Create() {
-
-  const {
-  placeholderName,
-  placeholderAge,
-  homeBtn,
-  invalid,
-  submitBtn
-} = strings;
+  const { placeholderName, placeholderAge, homeBtn, invalid, submitBtn } =
+    strings;
 
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
-
 
   let history = useNavigate();
 
@@ -40,29 +33,19 @@ export default function Create() {
   };
   return (
     <div>
-      <form>
-        <InputComp
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          placeholder={placeholderName}
-          required
-        />
-        <InputComp
-          onChange={(e) => setAge(e.target.value)}
-          type="number"
-          required
-          placeholder={placeholderAge}
-        />
-
-        <ButtonComp onClick={(e) => handleSubmit(e)} type="submit">
-          {submitBtn}
-        </ButtonComp>
-
-        <Link to="/">
-          <ButtonComp>{homeBtn}</ButtonComp>
-        </Link>
-      </form>
+      <FormInput
+        name={name}
+        age={age}
+        handleChange={handleChange}
+        setName={setName}
+        setAge={setAge}
+        handleSubmit={handleSubmit}
+        updateBtn={submitBtn}
+        homeBtn={homeBtn}
+        submitBtn={submitBtn}
+        placeholderName={placeholderName}
+        placeholderAge={placeholderAge}
+      />
     </div>
   );
 }
-
