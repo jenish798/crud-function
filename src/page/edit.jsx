@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { handleChange,FormInput,strings,array } from "../utils";
+import { handleChange,strings,array } from "../utils";
+import { FormInput } from "../components";
 
 export default function Edit() {
   const { invalid, placeholderName, placeholderAge, homeBtn, updateBtn } =
