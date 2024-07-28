@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import array from "../utils/data";
-import strings from "../utils/commonString";
-import { handleChange } from "../App";
-import { FormInput } from "../App";
+import { useNavigate } from "react-router-dom";
+import { handleChange,FormInput,strings,array } from "../utils";
 
 export default function Edit() {
   const { invalid, placeholderName, placeholderAge, homeBtn, updateBtn } =
@@ -31,6 +28,7 @@ export default function Edit() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if (name == "" || age == "") {
       alert(invalid);
       return;

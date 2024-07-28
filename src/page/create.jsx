@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuid } from "uuid";
-import array from "../utils/data";
-import strings from "../utils/commonString";
-import { handleChange } from "../App";
-import { FormInput } from "../App";
+import { handleChange,FormInput,strings,array } from "../utils";
 
 export default function Create() {
   const { placeholderName, placeholderAge, homeBtn, invalid, submitBtn } =

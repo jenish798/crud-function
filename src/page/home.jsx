@@ -1,13 +1,17 @@
 import { Link, useNavigate } from "react-router-dom";
-import array from "../utils/data";
 import ButtonComp from "../components/button/Button";
-import strings from "../utils/commonString";
-import { Table } from "../App";
+import { Table,strings,array } from "../utils";
 
-export default function Home() {
+export default function Home({name}) {
   const { headerName, headerAge, updateBtn, deleteBtn, createName } = strings;
 
   let history = useNavigate();
+
+  let create = useNavigate();
+
+  const created = () => {
+    create('/create');
+  };
 
   function setID(id, name, age) {
     localStorage.setItem("id", id);
@@ -33,12 +37,10 @@ export default function Home() {
         array={array}
         setID={setID}
         deleted={deleted}
-        updateBtn="Update"
-        deleteBtn="Delete"
+        updateBtn={updateBtn}
+        deleteBtn={deleteBtn}
       />
-      <Link to="./create">
-        <ButtonComp>{createName}</ButtonComp>
-      </Link>
+<ButtonComp onClick={created} name = {name} />
     </div>
   );
 }

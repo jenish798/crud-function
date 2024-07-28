@@ -10,5 +10,5 @@
   
   .des-input:focus {
     outline: none;
-    border-color: #4caf50; /* Green focus color */
+    border-color: #4caf50;
   }
