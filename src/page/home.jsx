@@ -1,8 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import ButtonComp from "../components/button/Button";
-import { Table,strings,array } from "../utils";
+import { strings, array } from "../utils";
+import { Table } from "../components";
 
-export default function Home({name}) {
+export default function Home({ name }) {
   const { headerName, headerAge, updateBtn, deleteBtn, createName } = strings;
 
   let history = useNavigate();
@@ -10,7 +11,7 @@ export default function Home({name}) {
   let create = useNavigate();
 
   const created = () => {
-    create('/create');
+    create("/create");
   };
 
   function setID(id, name, age) {
@@ -40,7 +41,7 @@ export default function Home({name}) {
         updateBtn={updateBtn}
         deleteBtn={deleteBtn}
       />
-<ButtonComp onClick={created} name = {name} />
+      <ButtonComp onClick={created} name={name} />
     </div>
   );
 }

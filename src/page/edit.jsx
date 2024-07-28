@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { handleChange,strings,array } from "../utils";
+import { handleChange, strings, array } from "../utils";
 import { FormInput } from "../components";
 
 export default function Edit() {
@@ -29,7 +29,7 @@ export default function Edit() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (name == "" || age == "") {
       alert(invalid);
       return;
