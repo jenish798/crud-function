@@ -1,15 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, Edit, Create } from "../page";
+import paths from "./paths";
 
-const RouterComp = () => (
-  <Router>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/create" element={<Create />} />
-      <Route path="/edit" element={<Edit />} />
-    </Routes>
-  </Router>
-);
+const routed = [
+  { path: paths.HOME, element: <Home /> },
+  { path: paths.CREATE, element: <Create /> },
+  { path: paths.EDIT, element: <Edit /> },
+];
 
-export default RouterComp;
+export default routed;

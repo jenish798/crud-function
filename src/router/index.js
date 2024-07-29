@@ -1,3 +1,4 @@
 import routed from './rout'
+import paths from './paths'
 
-export default routed
+export {routed,paths}
