@@ -5,8 +5,7 @@ import { handleChange, strings, array } from "../utils";
 import { FormInput } from "../components";
 
 export default function Create() {
-  const { placeholderName, placeholderAge, homeBtn, invalid, submitBtn } =
-    strings;
+  const { placeholderName, placeholderAge, homeBtn, invalid, submitBtn, createName } = strings;
 
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -41,6 +40,7 @@ export default function Create() {
         updateBtn={submitBtn}
         homeBtn={homeBtn}
         submitBtn={submitBtn}
+        createName = {createName}
         placeholderName={placeholderName}
         placeholderAge={placeholderAge}
       />

@@ -3,7 +3,7 @@ import ButtonComp from "../components/button/Button";
 import { strings, array } from "../utils";
 import { Table } from "../components";
 
-export default function Home({ name }) {
+export default function Home() {
   const { headerName, headerAge, updateBtn, deleteBtn, createName } = strings;
 
   let history = useNavigate();
@@ -34,14 +34,15 @@ export default function Home({ name }) {
   return (
     <div>
       <Table
-        headers={{ headerName: "Name", headerAge: "Age" }}
+        headerName={headerName}
+        headerAge={headerAge}
         array={array}
         setID={setID}
         deleted={deleted}
         updateBtn={updateBtn}
         deleteBtn={deleteBtn}
       />
-      <ButtonComp onClick={created} name={name} />
+      <ButtonComp onClick={created} name={createName} />
     </div>
   );
 }

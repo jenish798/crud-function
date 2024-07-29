@@ -4,8 +4,7 @@ import { handleChange, strings, array } from "../utils";
 import { FormInput } from "../components";
 
 export default function Edit() {
-  const { invalid, placeholderName, placeholderAge, homeBtn, updateBtn } =
-    strings;
+  const { invalid, placeholderName, placeholderAge, homeBtn, updateBtn } = strings;
 
   const [name, setName] = useState("");
   const [age, setAge] = useState("");

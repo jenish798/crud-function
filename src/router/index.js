@@ -1,3 +1,3 @@
-import RouterComp from "./rout";
+import routed from './rout'
 
-export default RouterComp
+export default routed
