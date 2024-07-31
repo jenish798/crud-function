@@ -29,7 +29,7 @@ const FormInput = ({
         onChange={handleChange(setAge)}
         placeholder={placeholderAge}
       />
-      <ButtonComp onClick={handleSubmit} type="submit" name ={createName}/>
+      <ButtonComp onClick={handleSubmit} type="submit" name ={updateBtn}/>
 
       <Link to="/">
         <ButtonComp name = {homeBtn}/>
